@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>JSON and AJAX Exercise</title>
+		<link href="https://fonts.googleapis.com/css?family=Wallpoet" rel="stylesheet">
+		<!-- Bootstrap CDN -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Font Awesome V4.7.0 -->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="myCSS.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body class="mainPic mainCol">
+		<div class="container">
+		<div class="jumbotron mainHeading">
+		<h1>Expensive Luxury Cars</h1>
+		</div>
+
+
+		 <div class="row">
+		  <div class="col-md-12">
+			<div class="jumbotron linkBridge">
+
+
+		 <div class="row">
+		<div class="col-md-3">
+
+			<select id="manufacturer"  class="btn btn-primary">
+			<option value="">Choose a Car Manufacturer</option>
+			<option value="0">Rolls Royce</option>
+			<option value="1">Aston Martin</option>
+			<option value="2">Bugatti</option>
+			<option value="3">Ferrari</option>
+			<option value="4">Pagani</option>
+			<option value="5">W Motors</option>
+			<option value="6">Lamborghini</option>
+			<option value="7">Koenigsegg</option>
+			<option value="8">Mercedes-Benz</option>
+
+			</select>
+
+		</div>
+
+
+			<div id="messageAlert" class="col-md-6 warningText">
+
+
+
+		</div>
+
+
+		<div class="col-md-3">
+
+			<select id="survey"  class="btn btn-primary alignR">
+			<option value="column">Choose another Chart Type</option>
+			<option value="column">Column</option>
+			<option value="bar">Bar</option>
+			<option value="doughnut">Doughnut</option>
+			<option value="line">Line</option>
+
+			</select>
+
+		</div>
+		</div>
+
+			 </div>
+			</div>
+			</div>
+
+
+		<div id="main-content">
+			<div class="jumbotron">
+
+			<div class="row">
+
+			 <div class="col-md-3"><h4>Manufacturer</h4>
+
+			<div id="manufacturerC" class="data">
+			</div>
+
+
+				 <br>
+
+				 <h4>Model</h4>
+				 <div id="modelC" class="data">
+				</div>
+
+				 <br>
+
+				 <h4>Price</h4>
+				 <div id="priceC" class="data">
+				</div>
+
+				 <br>
+
+				 <h4>Description</h4>
+				 <div id="descriptionC" class="descriptionC data modalB">
+				</div>
+
+				 <br><br>
+
+				 <h4>Video</h4>
+				 <div id="videoC" class="imgRotator data">
+
+				</div>
+				 <br><br>
+
+
+
+				</div>
+
+				<div class="col-md-3 col-md-offset-1" id="muscleContainer"><h4>Quality Survey Scores</h4>
+
+				Customer satisfaction survey<br>
+				5 is excellent and 1 is poor<br>
+
+
+				<h4>Overall</h4>
+				 <div id="overallC" class="data">
+				</div>
+
+				 <br>
+
+				 <h4>Mechanical</h4>
+				 <div id="mechanicalC" class="data">
+				</div>
+
+				 <br>
+
+				 <h4>Powertrain</h4>
+				 <div id="powertrainC" class="data">
+				</div>
+
+					<br>
+
+					<h4>Body</h4>
+				 <div id="bodyC" class="data">
+				</div>
+
+				 <br>
+
+				 <h4>Interior</h4>
+				 <div id="interiorC" class="data">
+				</div>
+
+				 <br>
+
+				 <h4>Accessories</h4>
+				 <div id="accessoriesC" class="data">
+				</div>
+
+
+				</div>
+
+
+
+				 <div class="col-md-5 allCentred" id="exercise_pics"><h4>Picture</h4><br><span id="imgC" class="imgRotator data"></span>
+
+
+
+					 <ul class="social-footer">
+
+					</ul>
+
+
+				<div class="row">
+				<div class="col-md-12">
+				<div id="chartContainer" class="data chartHolder">
+
+				</div>
+				 </div>
+				</div>
+
+				</div>
+
+			 </div>
+
+			</div>
+
+		</div>
+
+
+		 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content modal-popup">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<div class="row">
+				<div class="col-md-12 modalh3"><h3></h3>
+				<hr>
+				</div>
+				</div>
+				<div class="row">
+
+				<h4>Description</h4>
+				<div id="fullD" class="col-md-12 modalh4">
+
+
+					</div>
+
+
+				</div>
+
+
+				<div class="row">
+					<h4>More Info</h4>
+				<div id="fullL" class="col-md-12 modalh4">
+
+
+					</div>
+					<br><br>
+					<div><button class="btn btn-default btn-lg" type="button"  class="btn btn-default" data-dismiss="modal">Close</button></div>
+
+
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+
+		<script
+		  src="https://code.jquery.com/jquery-3.2.1.min.js"
+		  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		  crossorigin="anonymous">
+		</script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
+		<script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+		<script src="myScript.js"></script>
+
+		</div>
+	</body>
+
+
+</html>
